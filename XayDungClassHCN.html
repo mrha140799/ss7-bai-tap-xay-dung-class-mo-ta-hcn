@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeGym</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    function Rectangle(chieuRong, chieuDai) {
+        this.chieuRong = chieuRong;
+        this.chieuDai = chieuDai;
+        this.area = area;
+        this.perimeter = perimeter;
+        this.CreateRectangle = CreateRectangle;
+
+    }
+
+    function area() {
+        return this.chieuRong*this.chieuDai;
+    }
+
+    function perimeter() {
+        return (this.chieuRong + this.chieuDai) * 2;
+    }
+
+    function CreateRectangle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.beginPath();
+        ctx.rect(100, 200, this.chieuRong, this.chieuDai);
+        ctx.fill();
+        ctx.closePath();
+
+    }
+
+    let width = parseFloat(prompt("Mời nhập vào chiều dài"));
+    let height = parseFloat(prompt("Mời nhập vào chiều rộng"));
+    let obj1 = new Rectangle(width, height);
+    obj1.CreateRectangle();
+    alert("Diện tích : " + obj1.area() + " - Chu vi : " + obj1.perimeter());
+</script>
+</body>
+</html>
